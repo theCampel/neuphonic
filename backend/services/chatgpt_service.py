@@ -22,7 +22,7 @@ def generate_text():
     "We were angry with the referee but we have to criticise ourselves first for not finishing the game."
     Liverpool lost their next fixture against Arsenal, which ended their hopes of reaching 100 points.
     """
-    openai.api_key = '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'
+    openai.api_key = ''
     message = [{"role": "user", "content": "Give me a summary of this article in style of a radio show with two presenters called Adam and Amy having a conversation:" + article}]
 
     chat = openai.ChatCompletion.create(
