@@ -1,3 +1,5 @@
+from config import Config
+
 def text_to_speech(text):
     """
     Placeholder function for TTS service
@@ -6,7 +8,8 @@ def text_to_speech(text):
     2. Convert text to speech
     3. Yield audio chunks for streaming
     """
-    # Simulate streaming chunks
-    chunks = ["chunk1", "chunk2", "chunk3"]  # These would be actual audio data
+    api_key = Config.TTS_API_KEY
+    # Use api_key with your TTS service
+    chunks = ["chunk1", "chunk2", "chunk3"]
     for chunk in chunks:
         yield chunk 
