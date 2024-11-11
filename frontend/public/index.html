@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Text to Speech Web Application"
-    />
-    <title>TTS Web App</title>
+    <meta charset="UTF-8">
+    <title>MP3 Playback</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <h1>MP3 Track Playback</h1>
+    <button onclick="handleButtonClick()">Play Track</button>
+    <audio id="audio-player" src="songs/Led Zeppelin - Ramble On (Official Audio).mp3"></audio>
+    <script>
+        function handleButtonClick() {
+            const audio = document.getElementById('audio-player');
+            audio.play();
+        }
+    </script>
   </body>
-</html> 
+</html>
