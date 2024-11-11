@@ -18,8 +18,13 @@ async def main(user_text):
 
             if user_text.lower() == 'quit':
                 break
-
-            response = sse.send(user_text, tts_config=male)
+            
+            if 'male' in user_text.lower():
+                tts_config = male
+            else :
+                tts_config = female
+      
+            response = sse.send(user_text, tts_config= tts_config)
 
             for item in response:
                 player.play(item.data.audio)
