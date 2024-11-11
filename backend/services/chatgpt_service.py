@@ -29,5 +29,3 @@ def generate_text():
         model="gpt-3.5-turbo", messages=message
     ) 
     return chat.choices[0].message.content
-
-print(generate_text())
