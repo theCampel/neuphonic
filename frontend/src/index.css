@@ -26,4 +26,18 @@ button {
 button:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
-} 
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.play-button {
+  background-color: #4CAF50;
+}
+
+.stop-button {
+  background-color: #f44336;
+}
