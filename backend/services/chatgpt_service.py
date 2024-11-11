@@ -22,10 +22,21 @@ def generate_text():
     "We were angry with the referee but we have to criticise ourselves first for not finishing the game."
     Liverpool lost their next fixture against Arsenal, which ended their hopes of reaching 100 points.
     """
-    openai.api_key = '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'
-    message = [{"role": "user", "content": "Give me a summary of this article in style of a radio  show:" + article}]
+    openai.api_key = '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'
+    message = [{"role": "user", "content": "Give me a summary of this article in style of a radio show with two presenters called Adam and Amy having a conversation:" + article}]
 
     chat = openai.ChatCompletion.create(
         model="gpt-3.5-turbo", messages=message
     ) 
-    return chat.choices[0].message.content
+    reply = chat.choices[0].message.content
+    return formatText(reply)
+
+def formatText(gen_text):
+    text = gen_text.split("\n\n")
+    formatText = []
+    for t in text:
+        formatText.append(t.rsplit(":", 1)[1].lstrip())
+    return formatText
+
+
+print(generate_text())
