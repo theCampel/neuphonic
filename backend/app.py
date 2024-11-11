@@ -3,10 +3,6 @@ from flask_socketio import SocketIO, emit
 from flask_cors import CORS
 from services.chatgpt_service import generate_text
 from services.tts_service import text_to_speech
-from config import Config
-
-# Validate environment variables before starting the app
-Config.validate_config()
 
 app = Flask(__name__)
 CORS(app)
