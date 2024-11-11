@@ -23,14 +23,34 @@ function App() {
     }
   };
 
+  const handleStop = () => {
+    setIsPlaying(false);
+    // Placeholder function for stop functionality
+    console.log('Stop button clicked');
+    // You might want to:
+    // 1. Close WebSocket connection
+    // 2. Stop audio playback
+    // 3. Reset any relevant state
+  };
+
   return (
     <div className="App">
-      <button 
-        onClick={handlePlay}
-        disabled={isPlaying}
-      >
-        {isPlaying ? 'Playing...' : 'Play'}
-      </button>
+      <div className="button-container">
+        <button 
+          onClick={handlePlay}
+          disabled={isPlaying}
+          className="play-button"
+        >
+          {isPlaying ? 'Playing...' : 'Play'}
+        </button>
+        <button 
+          onClick={handleStop}
+          disabled={!isPlaying}
+          className="stop-button"
+        >
+          Stop
+        </button>
+      </div>
       <AudioPlayer isPlaying={isPlaying} />
     </div>
   );
